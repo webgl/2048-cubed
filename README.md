@@ -53,4 +53,5 @@ I'll be adding more meshing features; that said, if you'd like a feature, let me
 - Build support: Fix assets directory, compress output, etc.
 - Different controllers: Different controllers (e.g. touchpad, VR, etc.).
 - Different renderers: Add support for Babylon, CSS3D, SCG, etc.
+- TypeScript
 - Documentation
