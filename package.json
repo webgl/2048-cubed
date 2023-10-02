@@ -1,0 +1,42 @@
+{
+  "name": "2048-cubed",
+  "version": "0.0.1",
+  "description": "An interactive 3D version of 2048 built with Three.js",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel src/index.html --open",
+    "build": "parcel build src/index.html --public-url ./"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "three": "^0.156.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "parcel-plugin-static-files-copy": "^2.6.0",
+    "serve-static": "^1.15.0"
+  },
+  "staticFiles": {
+    "staticPath": [
+      "static",
+      "static"
+    ],
+    "watcherGlob": "**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FarhadG/2048-cube.git"
+  },
+  "keywords": [
+    "2048",
+    "html",
+    "webgl",
+    "javascript",
+    "game",
+    "3d",
+    "three.js"
+  ],
+  "author": "Farhad Ghayour",
+  "license": "MIT",
+  "homepage": "https://github.com/webgl/2048-cubed"
+}
