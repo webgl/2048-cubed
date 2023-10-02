@@ -31,9 +31,8 @@ export default class Renderer {
 
     this.cubeVisuals = this.loadCubeVisuals();
     this.cubeContainer = new THREE.Object3D();
-    this.cubeContainerVisual = this.generateCubeContainer();
-    this.scene.add(this.cubeContainerVisual);
     this.scene.add(this.cubeContainer);
+    this.scene.add(this.generateCubeContainer());
 
     this.animate();
   }
