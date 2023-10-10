@@ -140,7 +140,10 @@ export default class Manager {
         this.moveCube(cube, positions.furthest);
       }
 
-      moved = !isEqual(position, cube);
+      // `moved` indicates if at least one cube has changed position
+      // isEqual compares (by value) new position with old position.
+      // iff at least one cube has moved, we can add another cube.
+      moved ||= !isEqual(position, cube.position);
     });
 
     if (moved) {
