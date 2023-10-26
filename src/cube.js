@@ -22,4 +22,8 @@ export default class Cube {
     this.z = z;
     return this;
   };
+
+  get position() {
+    return { x: this.x, y: this.y, z: this.z }
+  }
 }
