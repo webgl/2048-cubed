@@ -30,7 +30,7 @@ export default class Manager {
     this.options = assign({
       dimensions: [4, 4, 1],
       startCubesCount: 2,
-      background: true
+      background: false
     }, options);
 
     this.dimensions = Manager.normalizeDimensions(this.options.dimensions);
