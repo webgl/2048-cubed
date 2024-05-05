@@ -4,8 +4,8 @@
   "description": "An interactive 3D version of 2048 built with Three.js",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "parcel src/index.html --open",
-    "build": "parcel build src/index.html --public-url ./"
+    "start": "npx parcel src/index.html --open",
+    "build": "npx parcel build src/index.html --public-url ./"
   },
   "dependencies": {
     "lodash": "^4.17.21",

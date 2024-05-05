@@ -61,15 +61,15 @@ export default class Renderer {
   };
 
   setupBackdrop = () => {
-    this.scene.background = new THREE.Color('white');
+    // this.scene.background = new THREE.Color('white');
 
     // DEMO 1
-    // if (this.options.background) {
-    //   this.scene.background = new THREE.CubeTextureLoader().setPath('/images/skybox/')
-    //     .load(['negx.jpg', 'posx.jpg', 'posy.jpg', 'negy.jpg', 'posz.jpg', 'negz.jpg']);
-    // } else {
-    //   this.scene.background = new THREE.Color('white');
-    // }
+    if (this.options.background) {
+      this.scene.background = new THREE.CubeTextureLoader().setPath('/images/skybox/')
+        .load(['negx.jpg', 'posx.jpg', 'posy.jpg', 'negy.jpg', 'posz.jpg', 'negz.jpg']);
+    } else {
+      this.scene.background = new THREE.Color('white');
+    }
     return this;
   };
 
@@ -77,9 +77,9 @@ export default class Renderer {
     this.scene.add(new THREE.AmbientLight('white', 5));
 
     // DEMO 2
-    // const pointLight = new THREE.PointLight('white', 10000);
-    // pointLight.position.set(10, 10, -20);
-    // this.scene.add(pointLight);
+    const pointLight = new THREE.PointLight('white', 10000);
+    pointLight.position.set(10, 10, -20);
+    this.scene.add(pointLight);
     return this;
   };
 
@@ -89,25 +89,25 @@ export default class Renderer {
   };
 
   transformDirectionVector = (directionVector) => {
-    return directionVector;
+    // return directionVector;
 
     // DEMO 4
-    // const transformedDirection = new THREE.Vector3(...directionVector).applyQuaternion(this.camera.quaternion);
+    const transformedDirection = new THREE.Vector3(...directionVector).applyQuaternion(this.camera.quaternion);
 
-    // let maxValue = -Infinity, maxAxis = null;
-    // ['x', 'y', 'z'].forEach((axis) => {
-    //   const value = Math.abs(transformedDirection[axis]);
-    //   const discardAxis = axis === 'z' && this.dimensions[2] === 1;
-    //   if (!discardAxis && value >= maxValue) {
-    //     maxValue = value;
-    //     maxAxis = axis;
-    //   }
-    // });
+    let maxValue = -Infinity, maxAxis = null;
+    ['x', 'y', 'z'].forEach((axis) => {
+      const value = Math.abs(transformedDirection[axis]);
+      const discardAxis = axis === 'z' && this.dimensions[2] === 1;
+      if (!discardAxis && value >= maxValue) {
+        maxValue = value;
+        maxAxis = axis;
+      }
+    });
 
-    // const value = transformedDirection[maxAxis];
-    // transformedDirection.x = transformedDirection.y = transformedDirection.z = 0;
-    // transformedDirection[maxAxis] = value < 0 ? -1 : 1;
-    // return [transformedDirection.x, transformedDirection.y, transformedDirection.z];
+    const value = transformedDirection[maxAxis];
+    transformedDirection.x = transformedDirection.y = transformedDirection.z = 0;
+    transformedDirection[maxAxis] = value < 0 ? -1 : 1;
+    return [transformedDirection.x, transformedDirection.y, transformedDirection.z];
   };
 
   addCube = (cube) => {
@@ -178,9 +178,9 @@ export default class Renderer {
 
   loadCubeVisuals = () => {
     const loader = new THREE.TextureLoader();
-    const common = { shininess: 200, reflectivity: 0.7 };
+    // const common = { shininess: 200, reflectivity: 0.7 };
     // DEMO 3
-    // const common = { shininess: 200, reflectivity: 0.7, envMap: this.scene.background };
+    const common = { shininess: 200, reflectivity: 0.7, envMap: this.scene.background };
     // TODO: Better color palette
     const cubeVisuals = {
       2: { ...common, color: 'red' },
